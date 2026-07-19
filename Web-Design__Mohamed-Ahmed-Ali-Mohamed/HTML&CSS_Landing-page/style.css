@@ -6,9 +6,14 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "Google Sans", sans-serif;
 }
+/* ================= Hero Section ================= */
 
 .hero {
   position: relative;
@@ -75,7 +80,7 @@ strong {
   width: 100%;
   background-color: #ffffff;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   z-index: 999;
   padding: 0 50px;
@@ -88,10 +93,48 @@ strong {
   font-size: 24px;
 }
 
+.hero-nav .links {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+#our-studio,
+#portfolio,
+#news-events,
+#contact-us {
+  scroll-margin-top: 80px;
+}
+
 .nav-links {
   display: flex;
   list-style: none;
   gap: 30px;
+}
+
+.nav-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav-links a::after {
+  content: "";
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background-color: #f1a208;
+  opacity: 0;
+  transform: scale(0.5);
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+}
+
+.nav-links a:hover::after,
+.nav-links a:focus::after {
+  opacity: 1;
+  transform: scale(1);
 }
 
 .nav-links a {
@@ -107,7 +150,7 @@ strong {
   color: #000;
   font-weight: bold;
 }
-/* about */
+/* ================= About Section ================= */
 .about-section {
   padding: 100px 0;
   background-color: #ffffff;
@@ -149,7 +192,7 @@ strong {
 .column-left p:last-child {
   margin-bottom: 0;
 }
-/* first-section photos */
+/* ================= OurStudio Section ================= */
 .photos-section {
   display: flex;
   flex-wrap: wrap;
@@ -376,7 +419,7 @@ strong {
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
-  gap: 1.5rem;
+  gap: 2.5rem;
   max-width: 1300px;
   margin: 0 auto;
 }
@@ -409,6 +452,33 @@ strong {
 
 .news-img:hover img {
   transform: scale(1.05);
+}
+
+.news-img::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 4px;
+  width: 0;
+  z-index: 3;
+  transition: width 0.4s ease;
+}
+
+.news-img:hover::after {
+  width: 100%;
+}
+
+.news-img:has(.badge-yellow)::after {
+  background-color: #f1c40f;
+}
+
+.news-img:has(.badge-blue)::after {
+  background-color: #2f6fed;
+}
+
+.news-img:has(.badge-green)::after {
+  background-color: #2ecc71;
 }
 
 .news-main .news-img img {
@@ -499,8 +569,8 @@ strong {
 /* البادجات فوق الصور */
 .badge {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 15px;
+  left: 15px;
   z-index: 2;
   font-size: 13px;
   font-weight: 600;
@@ -518,4 +588,224 @@ strong {
 
 .badge-green {
   background-color: #2ecc71;
+}
+
+@media (max-width: 700px) {
+  .news-section {
+    padding: 50px 25px;
+  }
+
+  .news-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .news-item .news-img {
+    width: 100%;
+  }
+}
+
+/* ================= Contact Form Section ================= */
+.contact-section {
+  padding: 100px 60px;
+  background-color: #ffffff;
+}
+
+.contact-title {
+  text-align: center;
+  font-size: 34px;
+  font-weight: 800;
+  color: #1a1a1a;
+  margin-bottom: 60px;
+}
+
+.contact-form {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+}
+
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.form-group {
+  flex: 1 1 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.form-group label {
+  font-size: 15px;
+  font-weight: 700;
+  color: #4a4d52;
+}
+
+.required {
+  color: #e0554f;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+  border: 1px solid #d8d9db;
+  padding: 16px 18px;
+  font-size: 16px;
+  font-family: inherit;
+  color: #333;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group textarea:focus {
+  border-color: #1a1a1a;
+}
+
+.form-group textarea {
+  min-height: 220px;
+  resize: vertical;
+}
+
+.checkbox-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.checkbox-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 17px;
+  font-weight: 400;
+  color: #333;
+  cursor: pointer;
+}
+
+.checkbox-item input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  border: 1px solid #d8d9db;
+  cursor: pointer;
+  accent-color: #1a1a1a;
+}
+
+.form-submit {
+  display: flex;
+  justify-content: center;
+}
+
+.send-btn {
+  background-color: #1a1a1a;
+  color: #fff;
+  border: none;
+  padding: 20px 55px;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.send-btn:hover {
+  background-color: #ff7a00;
+}
+
+/* ================= Map Section ================= */
+.map-section {
+  width: 100%;
+  height: 480px;
+}
+
+.map-frame {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+  filter: grayscale(1) contrast(1.05);
+}
+
+/* ================= Footer Section ================= */
+.site-footer {
+  background-color: #0d0d0d;
+  color: #fff;
+  padding: 60px 60px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+.footer-top {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.footer-location {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.footer-location i {
+  font-size: 20px;
+  color: #fff;
+}
+
+.footer-location h3 {
+  font-size: 28px;
+  font-weight: 800;
+}
+
+.footer-email {
+  font-size: 16px;
+  color: #b5b6ba;
+}
+
+.footer-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  border-top: 1px solid #2a2a2a;
+  padding-top: 30px;
+}
+
+.footer-copy p {
+  font-size: 14px;
+  color: #8a8b8f;
+  line-height: 1.8;
+}
+
+.footer-social {
+  display: flex;
+  gap: 18px;
+}
+
+.footer-social a {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background-color: #1c1c1e;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.footer-social a:hover {
+  background-color: #ff7a00;
 }

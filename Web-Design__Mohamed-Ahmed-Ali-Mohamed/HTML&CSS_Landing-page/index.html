@@ -4,12 +4,21 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Nomad Force</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
 
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
     <main>
-      <section class="hero">
+      <!-- ================= Hero Section ================= -->
+
+      <section class="hero" id="home">
         <div class="hero-text">
           <h1>Nomad Force</h1>
           <p>create a great video for your <strong>website</strong></p>
@@ -36,14 +45,15 @@
         <div class="nav-logo">Nomad Force</div>
         <div class="links">
           <ul class="nav-links">
-            <li><a href="#" class="active">Home</a></li>
-            <li><a href="#">Our Studio</a></li>
-            <li><a href="#">Portfolio</a></li>
-            <li><a href="#">News & Events</a></li>
-            <li><a href="#">Contact Us</a></li>
+            <li><a href="#home" class="active">Home</a></li>
+            <li><a href="#our-studio">Our Studio</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#news-events">News & Events</a></li>
+            <li><a href="#contact-us">Contact Us</a></li>
           </ul>
         </div>
       </nav>
+      <!-- ================= About Section ================= -->
 
       <section class="about-section">
         <div class="container">
@@ -73,8 +83,8 @@
           </div>
         </div>
       </section>
-      <!-- first section photos -->
-      <section class="photos-section">
+      <!-- ================= OurStudio Section ================= -->
+      <section class="photos-section" id="our-studio">
         <div class="left-container">
           <div class="panel panel-image-left"></div>
 
@@ -102,7 +112,7 @@
         </div>
       </section>
       <!-- ================= Portfolio Section ================= -->
-      <section class="portfolio-section">
+      <section class="portfolio-section" id="portfolio">
         <h2 class="portfolio-title">Portfolio</h2>
 
         <div class="portfolio-grid">
@@ -159,7 +169,7 @@
       </section>
 
       <!-- ================= News & Events Section ================= -->
-      <section class="news-section">
+      <section class="news-section" id="news-events">
         <h2 class="news-title">News &amp; Events</h2>
 
         <div class="news-grid">
@@ -194,7 +204,8 @@
                   Job Opportunities: Digital, Marketing
                 </h4>
                 <span class="news-meta">
-                  <span class="pin-icon">&#128205;</span> Alaska, August 6, 2021
+                  <i class="fa-solid fa-location-dot"></i>
+                  Alaska, August 6, 2021
                 </span>
               </div>
             </div>
@@ -217,6 +228,116 @@
           </div>
         </div>
       </section>
+
+      <!-- ================= Contact Form Section ================= -->
+      <section class="contact-section" id="contact-us">
+        <h2 class="contact-title">Dont' be shy, write to us</h2>
+
+        <form class="contact-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Name <span class="required">*</span></label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Full name"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email <span class="required">*</span></label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Email address"
+              />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="message">How can we help?</label>
+            <textarea
+              id="message"
+              name="message"
+              placeholder="Tell us about the project"
+            ></textarea>
+          </div>
+
+          <label>Services <span class="required">*</span></label>
+          <div class="checkbox-row">
+            <label class="checkbox-item">
+              <input type="checkbox" name="services" value="branding" />
+              Branding
+            </label>
+
+            <label class="checkbox-item">
+              <input
+                type="checkbox"
+                name="services"
+                value="digital-experiences"
+              />
+              Digital Experiences
+            </label>
+
+            <label class="checkbox-item">
+              <input type="checkbox" name="services" value="web-development" />
+              Web Development
+            </label>
+          </div>
+
+          <div class="form-submit">
+            <button type="submit" class="send-btn">Send Message</button>
+          </div>
+        </form>
+      </section>
+
+      <!-- ================= Map Section ================= -->
+      <section class="map-section">
+        <iframe
+          class="map-frame"
+          src="https://maps.google.com/maps?q=Cairo,Egypt&z=12&output=embed"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </section>
+
+      <!-- ================= Footer Section ================= -->
+      <footer class="site-footer">
+        <div class="footer-top">
+          <div class="footer-location">
+            <i class="fa-solid fa-location-dot"></i>
+            <h3>Cairo, Egypt</h3>
+          </div>
+          <p class="footer-email">info@company.com</p>
+        </div>
+
+        <div class="footer-bottom">
+          <div class="footer-copy">
+            <p>Copyright &copy; Nomad Force 2026</p>
+            <p>Design: Mohamed-Kasalh</p>
+          </div>
+
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook"
+              ><i class="fa-brands fa-facebook-f"></i
+            ></a>
+            <a href="#" aria-label="Twitter"
+              ><i class="fa-brands fa-twitter"></i
+            ></a>
+            <a href="#" aria-label="WhatsApp"
+              ><i class="fa-brands fa-whatsapp"></i
+            ></a>
+            <a href="#" aria-label="Instagram"
+              ><i class="fa-brands fa-instagram"></i
+            ></a>
+            <a href="#" aria-label="YouTube"
+              ><i class="fa-brands fa-youtube"></i
+            ></a>
+          </div>
+        </div>
+      </footer>
     </main>
   </body>
 </html>
