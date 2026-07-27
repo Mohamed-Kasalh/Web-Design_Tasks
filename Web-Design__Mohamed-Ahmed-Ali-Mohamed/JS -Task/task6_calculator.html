@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Task 6 - Simple Calculator</title>
+</head>
+<body>
+  <h2>Simple Calculator</h2>
+
+  <script>
+    let num1 = Number(prompt("Enter first number:"));
+    let num2 = Number(prompt("Enter second number:"));
+    let op = prompt("Enter operator (+, -, *, /, %):");
+
+    let result;
+
+    if (op === "+") {
+      result = num1 + num2;
+    } else if (op === "-") {
+      result = num1 - num2;
+    } else if (op === "*") {
+      result = num1 * num2;
+    } else if (op === "/") {
+      result = num1 / num2;
+    } else if (op === "%") {
+      result = num1 % num2;
+    } else {
+      console.log("Invalid operator");
+    }
+
+    console.log("Result: " + result);
+  </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Task 1 - Grade Calculator</title>
+</head>
+<body>
+  <h2>Grade Calculator</h2>
+
+  <script>
+    let phy = Number(prompt("Enter marks in Physics (out of 20):"));
+    let chem = Number(prompt("Enter marks in Chemistry (out of 20):"));
+    let bio = Number(prompt("Enter marks in Biology (out of 20):"));
+    let math = Number(prompt("Enter marks in Mathematics (out of 20):"));
+    let comp = Number(prompt("Enter marks in Computer (out of 20):"));
+
+    let total = phy + chem + bio + math + comp;
+    let percentage = (total / 100) * 100;
+
+    let grade;
+    if (percentage >= 90) {
+      grade = "A";
+    } else if (percentage >= 80) {
+      grade = "B";
+    } else if (percentage >= 70) {
+      grade = "C";
+    } else if (percentage >= 60) {
+      grade = "D";
+    } else if (percentage >= 40) {
+      grade = "E";
+    } else {
+      grade = "F";
+    }
+
+    console.log("Total: " + total);
+    console.log("Percentage: " + percentage + "%");
+    console.log("Grade: " + grade);
+  </script>
+</body>
+</html>
